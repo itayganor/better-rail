@@ -19,63 +19,9 @@ struct RoutesView: View {
               Spacer()
               Text("09:32")
             }
-          }
-          Button {} label: {
-            HStack {
-              Text("08:23")
-              Spacer()
-              Image(systemName: "arrow.left")
-              Spacer()
-              Text("09:32")
-            }
-          }
-          Button {} label: {
-            HStack {
-              Text("08:23")
-              Spacer()
-              Image(systemName: "arrow.left")
-              Spacer()
-              Text("09:32")
-            }
-          }
-          Button {} label: {
-            HStack {
-              Text("08:23")
-              Spacer()
-              Image(systemName: "arrow.left")
-              Spacer()
-              Text("09:32")
-            }
-          }
-          Button {} label: {
-            HStack {
-              Text("08:23")
-              Spacer()
-              Image(systemName: "arrow.left")
-              Spacer()
-              Text("09:32")
-            }
-          }
-          Button {} label: {
-            HStack {
-              Text("08:23")
-              Spacer()
-              Image(systemName: "arrow.left")
-              Spacer()
-              Text("09:32")
-            }
-          }
-          Button {} label: {
-            HStack {
-              Text("08:23")
-              Spacer()
-              Image(systemName: "arrow.left")
-              Spacer()
-              Text("09:32")
-            }
-          }
+          }          
         }
-              }.navigationTitle("בדיקה")
+      }
     }
 }
 
