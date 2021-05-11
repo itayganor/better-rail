@@ -9,17 +9,29 @@ import SwiftUI
 
 struct FavoritesView: View {
     var body: some View {
-      NavigationView {
-        NavigationLink(destination: FavoritesView()) {
-          Text("יצחק נבון \(Image(systemName: "square.and.pencil")) אשקלון")
+      VStack {
+        NavigationLink(destination: RoutesView()) {          
+          Text("יצחק נבון")
+          Spacer()
+          Image(systemName: "arrow.left")
+          Spacer()
+          Text("השלום")
         }
-      }
+        NavigationLink(destination: RoutesView()) {
+          Text("אשקלון")
+          Spacer()
+          Image(systemName: "arrow.left")
+          Spacer()
+          Text("השלום")
+        }
+      }.navigationTitle("מועדפים")
     }
 }
 
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-      FavoritesView()
-        .preferredColorScheme(.dark)
+      NavigationView {
+        FavoritesView()
+      }
     }
 }

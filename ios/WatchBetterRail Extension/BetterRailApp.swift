@@ -12,7 +12,7 @@ struct BetterRailApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                FavoritesView()
             }
         }
 
