@@ -6,21 +6,26 @@ struct FavoriteItemView: View {
   
     var body: some View {
       GeometryReader { metrics in
-        HStack() {
+        HStack {
           Text(origin.hebrew).multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
-          Spacer()
+          
+          Spacer()          
           Image(systemName: "arrow.left")
-            
           Spacer()
+          
           Text(destination.hebrew).multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
-        }
-      }.frame(height: 40)
-
+        }.position(x: metrics.size.width / 2, y: metrics.size.height / 2.1)
+      }.frame(height: 40, alignment: .center).font(.caption2)
     }
 }
 
 struct FavoriteItemView_Previews: PreviewProvider {
     static var previews: some View {
-      FavoriteItemView(origin: stations[0], destination: stations[2])
+      VStack {
+        FavoriteItemView(origin: stations[0], destination: stations[3])
+        FavoriteItemView(origin: stations[1], destination: stations[3])
+        
+      }
+      
     }
 }

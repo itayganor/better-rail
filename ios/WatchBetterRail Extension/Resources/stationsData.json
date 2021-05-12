@@ -1,7 +1,7 @@
 [
    {
       "id": "3700",
-      "hebrew": "תל אביב - סבידור מרכז",
+      "hebrew": "ת״א - סבידור",
       "english": "Tel Aviv - Savidor Center",
       "russian": "Тель-Авив - Мерказ - Центральная",
       "arabic": "تل ابيب – ساڤيدور المركز"
@@ -147,14 +147,14 @@
    },
    {
       "id": "4600",
-      "hebrew": "תל אביב - השלום",
+      "hebrew": "ת״א - השלום",
       "english": "Tel Aviv - HaShalom",
       "russian": "Тель-Авив - ха-Шалом",
       "arabic": "تل أبيب - السلام"
    },
    {
       "id": "2100",
-      "hebrew": "חיפה - מרכז השמונה",
+      "hebrew": "מרכז השמונה",
       "english": "Haifa Center - HaShmona",
       "russian": "Хайфа - Мерказ - Центральная"
    },
@@ -167,7 +167,7 @@
    },
    {
       "id": "8800",
-      "hebrew": "ראש העין - צפון",
+      "hebrew": "ראש העין",
       "english": "Rosh Ha'Ayin - North",
       "russian": "Рош ха - Айн Цафон",
       "arabic": "روش هعاين - شمال"

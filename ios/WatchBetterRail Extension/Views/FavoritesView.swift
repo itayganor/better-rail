@@ -11,27 +11,10 @@ struct FavoritesView: View {
     var body: some View {
       VStack {
         NavigationLink(destination: RoutesView()) {
-          GeometryReader { metrics in
-            HStack() {
-              Text("ת״א - מרכז").multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
-              Spacer()
-              Image(systemName: "arrow.left")
-                
-              Spacer()
-              Text("אשדוד - עד הלום").multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
-            }
-          }.frame(height: 40)
+          FavoriteItemView(origin: stations[0], destination: stations[1])
         }
         NavigationLink(destination: RoutesView()) {
-          GeometryReader { metrics in
-            HStack() {
-              Text("אשקלון").frame(width: metrics.size.width * 0.4, alignment: .center)
-              Spacer()
-              Image(systemName: "arrow.left")
-              Spacer()
-              Text("חוף הכרמל").multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
-            }
-          }.frame(height: 40)
+          FavoriteItemView(origin: stations[2], destination: stations[3])
         }
         Spacer()
       }.navigationTitle("מועדפים")
