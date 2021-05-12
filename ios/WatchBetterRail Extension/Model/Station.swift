@@ -1,6 +1,6 @@
 import Foundation
 
-struct Landmark: Hashable, Codable, Identifiable {
+struct Station: Hashable, Codable, Identifiable {
     var id: String
     var hebrew: String
 }

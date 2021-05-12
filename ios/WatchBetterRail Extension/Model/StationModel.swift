@@ -1,8 +1,8 @@
 import Foundation
 import Combine
 
-final class ModelData: ObservableObject {
-  @Published var stations: [Landmark] = load("stationsData.json")
+final class StationModel: ObservableObject {
+  @Published var stations: [Station] = load("stationsData.json")
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
