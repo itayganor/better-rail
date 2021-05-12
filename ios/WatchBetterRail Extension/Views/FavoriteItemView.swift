@@ -21,6 +21,6 @@ struct FavoriteItemView: View {
 
 struct FavoriteItemView_Previews: PreviewProvider {
     static var previews: some View {
-      FavoriteItemView()
+      FavoriteItemView(origin: stations[0], destination: stations[2])
     }
 }
