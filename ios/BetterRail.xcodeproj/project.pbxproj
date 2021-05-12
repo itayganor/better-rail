@@ -37,6 +37,7 @@
 		C1D84A1F264ACFB4006D8FF1 /* WatchBetterRail.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C1D849FE264ACFB3006D8FF1 /* WatchBetterRail.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C1D84A2B264AD1A8006D8FF1 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D84A2A264AD1A8006D8FF1 /* FavoritesView.swift */; };
 		C1D84A2D264AD406006D8FF1 /* RoutesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D84A2C264AD406006D8FF1 /* RoutesView.swift */; };
+		C1D84A30264C00D0006D8FF1 /* stationsData.json in Resources */ = {isa = PBXBuildFile; fileRef = C1D84A2F264C00D0006D8FF1 /* stationsData.json */; };
 		DA04D16B7E3649A49F843A15 /* Heebo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A047FB8FBCA54556AEDB349D /* Heebo-Light.otf */; };
 		E0E402AF856107EC82190244 /* libPods-BetterRail-BetterRailTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BE758935A381A571F5B21 /* libPods-BetterRail-BetterRailTests.a */; };
 		EB148A208318438E9A4B4B99 /* Heebo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70BF4419AFA46D2B69352A3 /* Heebo-Thin.otf */; };
@@ -144,6 +145,7 @@
 		C1D84A1C264ACFB4006D8FF1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		C1D84A2A264AD1A8006D8FF1 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		C1D84A2C264AD406006D8FF1 /* RoutesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesView.swift; sourceTree = "<group>"; };
+		C1D84A2F264C00D0006D8FF1 /* stationsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stationsData.json; sourceTree = "<group>"; };
 		D7E787E39BC1C66D83758CC7 /* Pods-BetterRail-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterRail-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterRail-tvOSTests/Pods-BetterRail-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C07A94FCDB4698B4A058EB /* Heebo-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Bold.otf"; path = "../assets/fonts/Heebo-Bold.otf"; sourceTree = "<group>"; };
 		EADEA568884090C1B008E181 /* libPods-BetterRail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BetterRail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,6 +308,7 @@
 		C1D84A0B264ACFB4006D8FF1 /* WatchBetterRail Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C1D84A2E264C00AC006D8FF1 /* Resources */,
 				C1D84A28264AD190006D8FF1 /* Views */,
 				C1D84A0C264ACFB4006D8FF1 /* BetterRailApp.swift */,
 				C1D84A0E264ACFB4006D8FF1 /* ContentView.swift */,
@@ -335,6 +338,14 @@
 				C1D84A2C264AD406006D8FF1 /* RoutesView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C1D84A2E264C00AC006D8FF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C1D84A2F264C00D0006D8FF1 /* stationsData.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D6A8C2445E5D42FA8F96D59C /* Resources */ = {
@@ -586,6 +597,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1D84A30264C00D0006D8FF1 /* stationsData.json in Resources */,
 				C1D84A1A264ACFB4006D8FF1 /* Preview Assets.xcassets in Resources */,
 				C1D84A17264ACFB4006D8FF1 /* Assets.xcassets in Resources */,
 			);
