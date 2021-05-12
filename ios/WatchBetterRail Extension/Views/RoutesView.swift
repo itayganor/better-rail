@@ -19,7 +19,7 @@ struct RoutesView: View {
               Spacer()
               Text("09:32")
             }
-          }          
+          }
         }
       }
     }
