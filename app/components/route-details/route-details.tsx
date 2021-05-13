@@ -1,20 +1,16 @@
-/* eslint-disable react/display-name */
-import React, { useMemo, useLayoutEffect } from "react"
+import * as React from "react"
 import { Image, ImageBackground, View, ViewStyle, TextStyle, ImageStyle, Appearance } from "react-native"
-import { useNavigation } from "@react-navigation/native"
-import { observer } from "mobx-react-lite"
 import LinearGradient from "react-native-linear-gradient"
 import { color, spacing } from "../../theme"
-import { Text, StarIcon } from "../"
+import { Text } from "../"
 import { stationsObject, stationLocale } from "../../data/stations"
 import { isRTL } from "../../i18n"
-import { FavoriteRoute, useStores } from "../../models"
 
 const arrowIcon = require("../../../assets/arrow-left.png")
 
 const colorScheme = Appearance.getColorScheme()
-
 // #region styles
+
 const ROUTE_DETAILS_WRAPPER: ViewStyle = {
   flexDirection: "row",
   justifyContent: "center",
@@ -71,50 +67,28 @@ const GARDIENT: ViewStyle = {
   top: 0,
   opacity: 1,
 }
+
 // #endregion
 
-export interface RouteDetailsHeaderProps {
+export interface RouteDetailsProps {
   originId: string
   destinationId: string
   style?: ViewStyle
+  imageStyle: ImageStyle
 }
 
-export const RouteDetailsHeader = observer(function RouteDetailsHeader(props: RouteDetailsHeaderProps) {
-  const { originId, destinationId, style } = props
-  const { favoriteRoutes } = useStores()
-  const navigation = useNavigation()
+/**
+ * Describe your component here
+ */
+export const RouteDetails = function RouteDetails(props: RouteDetailsProps) {
+  const { originId, destinationId, imageStyle, style } = props
 
   const originName = stationsObject[originId][stationLocale]
   const destinationName = stationsObject[destinationId][stationLocale]
 
-  const routeId = `${originId}${destinationId}`
-  console.log(favoriteRoutes.routes)
-
-  const isFavorite: boolean = useMemo(() => {
-    return favoriteRoutes.routes.find((favorite) => favorite.id === routeId)
-  }, [favoriteRoutes.routes.length])
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <StarIcon
-          filled={isFavorite}
-          onPress={() => {
-            const favorite: FavoriteRoute = { id: routeId, originId, destinationId }
-            if (!isFavorite) {
-              favoriteRoutes.add(favorite)
-            } else {
-              favoriteRoutes.remove(favorite)
-            }
-          }}
-        />
-      ),
-    })
-  }, [favoriteRoutes.routes.length])
-
   return (
     <View>
-      <ImageBackground source={stationsObject[originId].image} style={{ width: "100%", height: 200, zIndex: 0 }}>
+      <ImageBackground source={stationsObject[originId].image} style={[{ width: "100%", height: 200, zIndex: 0 }, imageStyle]}>
         <LinearGradient style={GARDIENT} colors={["rgba(0, 0, 0, 0.75)", "rgba(0, 0, 0, 0.05)"]} />
       </ImageBackground>
 
@@ -137,4 +111,4 @@ export const RouteDetailsHeader = observer(function RouteDetailsHeader(props: Ro
       </View>
     </View>
   )
-})
+}
