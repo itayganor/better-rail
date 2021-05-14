@@ -13004,6 +13004,13 @@ react-native-unimodules@0.11.0:
     unimodules-sensors-interface "~5.3.0"
     unimodules-task-manager-interface "~5.3.0"
 
+react-native-watch-connectivity@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-watch-connectivity/-/react-native-watch-connectivity-1.0.3.tgz#20cdf13216df1c5869d459acc856410867e54238"
+  integrity sha512-YITROIsVJw2mw5bm2Xr0waob16EdWJKpIO1B7AJWEpoWwSRu6bS/x1Z0QOhIFDWhRJFNvTQwnnflCq6PjflXNQ==
+  dependencies:
+    lodash.sortby "^4.7.0"
+
 react-native-web@0.13.18:
   version "0.13.18"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.18.tgz#964f058a16521a3b9a31b091415edfef5b6ef305"
