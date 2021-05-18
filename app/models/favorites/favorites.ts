@@ -1,15 +1,10 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { updateApplicationContext, getIsWatchAppInstalled } from "react-native-watch-connectivity"
+import { watchEvents, updateApplicationContext, getIsWatchAppInstalled } from "react-native-watch-connectivity"
 
-let isWatchInstalled = false
+updateApplicationContext({ test: "value" })
 
-getIsWatchAppInstalled().then((result) => {
-  if (result === true) {
-    isWatchInstalled = true
-
-    updateApplicationContext({ test: "value" })
-  }
-  alert(result)
+watchEvents.addListener("application-context", (context) => {
+  console.log("Context updated:", context)
 })
 
 export const favoriteRouteSchema = {
