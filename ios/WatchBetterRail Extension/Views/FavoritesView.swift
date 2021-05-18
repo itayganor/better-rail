@@ -1,21 +1,16 @@
-//
-//  FavoritesView.swift
-//  BetterRail
-//
-//  Created by Guy Tepper on 11/05/2021.
-//
-
 import SwiftUI
 
 struct FavoritesView: View {
+  @EnvironmentObject var favorites: Favorites
+  
     var body: some View {
       VStack {
-        NavigationLink(destination: RoutesView()) {
-          FavoriteItemView(origin: stations[0], destination: stations[1])
+        ForEach(0 ..< favorites.stations.count) { index in
+          NavigationLink(destination: RoutesView()) {
+            FavoriteItemView(origin: favorites.stations[index].origin, destination: favorites.stations[index].destination)
+          }
         }
-        NavigationLink(destination: RoutesView()) {
-          FavoriteItemView(origin: stations[2], destination: stations[3])
-        }
+        
         Spacer()
       }.navigationTitle("מועדפים")
     }
@@ -24,7 +19,7 @@ struct FavoritesView: View {
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
       NavigationView {
-        FavoritesView()
+        FavoritesView().environmentObject(Favorites())
       }
     }
 }

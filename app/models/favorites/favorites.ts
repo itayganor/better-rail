@@ -6,7 +6,10 @@ let isWatchInstalled = false
 getIsWatchAppInstalled().then((result) => {
   if (result === true) {
     isWatchInstalled = true
+
+    updateApplicationContext({ test: "value" })
   }
+  alert(result)
 })
 
 export const favoriteRouteSchema = {

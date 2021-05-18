@@ -24,6 +24,7 @@
 		9F35C4F574E710F3E22269DC /* libPods-BetterRail-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3982FFE6B0255867763A9EDF /* libPods-BetterRail-tvOS.a */; };
 		A4B148D367B119F99EC2C2E5 /* libPods-BetterRail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EADEA568884090C1B008E181 /* libPods-BetterRail.a */; };
 		B9BE70BEF87ABACA22A7BCB6 /* libPods-BetterRail-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60796641CDFE67F015A69D88 /* libPods-BetterRail-tvOSTests.a */; };
+		C13ACA93264EBC2B0062075E /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13ACA92264EBC2B0062075E /* FavoritesModel.swift */; };
 		C14F313426331361002A01D7 /* Swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F313326331361002A01D7 /* Swifty.swift */; };
 		C19187D9264C1759000B9C57 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19187D8264C1759000B9C57 /* StationModel.swift */; };
 		C1D84A01264ACFB4006D8FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D84A00264ACFB4006D8FF1 /* Assets.xcassets */; };
@@ -131,6 +132,7 @@
 		A2759849ACE84A51AA1EC58E /* Heebo-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Medium.otf"; path = "../assets/fonts/Heebo-Medium.otf"; sourceTree = "<group>"; };
 		A70BF4419AFA46D2B69352A3 /* Heebo-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Thin.otf"; path = "../assets/fonts/Heebo-Thin.otf"; sourceTree = "<group>"; };
 		AF4431C692CA4F7D8DC013BE /* Heebo-ExtraBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-ExtraBold.otf"; path = "../assets/fonts/Heebo-ExtraBold.otf"; sourceTree = "<group>"; };
+		C13ACA92264EBC2B0062075E /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		C14F313226331361002A01D7 /* BetterRail-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BetterRail-Bridging-Header.h"; sourceTree = "<group>"; };
 		C14F313326331361002A01D7 /* Swifty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty.swift; sourceTree = "<group>"; };
 		C19187D8264C1759000B9C57 /* StationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			children = (
 				C1D84A34264C0CE8006D8FF1 /* Station.swift */,
 				C19187D8264C1759000B9C57 /* StationModel.swift */,
+				C13ACA92264EBC2B0062075E /* FavoritesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -904,6 +907,7 @@
 				C1D84A0F264ACFB4006D8FF1 /* ContentView.swift in Sources */,
 				C1D84A2D264AD406006D8FF1 /* RoutesView.swift in Sources */,
 				C1D84A2B264AD1A8006D8FF1 /* FavoritesView.swift in Sources */,
+				C13ACA93264EBC2B0062075E /* FavoritesModel.swift in Sources */,
 				C1D84A15264ACFB4006D8FF1 /* ComplicationController.swift in Sources */,
 				C1D84A37264C125C006D8FF1 /* FavoriteItemView.swift in Sources */,
 				C19187D9264C1759000B9C57 /* StationModel.swift in Sources */,

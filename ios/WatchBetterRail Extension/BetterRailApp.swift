@@ -12,10 +12,8 @@ struct BetterRailApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                FavoritesView()
+              FavoritesView().environmentObject(FavoritesModel())
             }
         }
-
-        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }
