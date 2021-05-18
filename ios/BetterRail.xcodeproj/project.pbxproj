@@ -30,7 +30,6 @@
 		C1D84A01264ACFB4006D8FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D84A00264ACFB4006D8FF1 /* Assets.xcassets */; };
 		C1D84A08264ACFB4006D8FF1 /* WatchBetterRail Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C1D84A07264ACFB4006D8FF1 /* WatchBetterRail Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C1D84A0D264ACFB4006D8FF1 /* BetterRailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D84A0C264ACFB4006D8FF1 /* BetterRailApp.swift */; };
-		C1D84A0F264ACFB4006D8FF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D84A0E264ACFB4006D8FF1 /* ContentView.swift */; };
 		C1D84A11264ACFB4006D8FF1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D84A10264ACFB4006D8FF1 /* NotificationController.swift */; };
 		C1D84A13264ACFB4006D8FF1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D84A12264ACFB4006D8FF1 /* NotificationView.swift */; };
 		C1D84A15264ACFB4006D8FF1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D84A14264ACFB4006D8FF1 /* ComplicationController.swift */; };
@@ -141,7 +140,6 @@
 		C1D84A02264ACFB4006D8FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1D84A07264ACFB4006D8FF1 /* WatchBetterRail Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchBetterRail Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D84A0C264ACFB4006D8FF1 /* BetterRailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRailApp.swift; sourceTree = "<group>"; };
-		C1D84A0E264ACFB4006D8FF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1D84A10264ACFB4006D8FF1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		C1D84A12264ACFB4006D8FF1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		C1D84A14264ACFB4006D8FF1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -327,7 +325,6 @@
 				C1D84A2E264C00AC006D8FF1 /* Resources */,
 				C1D84A28264AD190006D8FF1 /* Views */,
 				C1D84A0C264ACFB4006D8FF1 /* BetterRailApp.swift */,
-				C1D84A0E264ACFB4006D8FF1 /* ContentView.swift */,
 				C1D84A10264ACFB4006D8FF1 /* NotificationController.swift */,
 				C1D84A12264ACFB4006D8FF1 /* NotificationView.swift */,
 				C1D84A14264ACFB4006D8FF1 /* ComplicationController.swift */,
@@ -904,7 +901,6 @@
 			files = (
 				C1D84A11264ACFB4006D8FF1 /* NotificationController.swift in Sources */,
 				C1D84A35264C0CE8006D8FF1 /* Station.swift in Sources */,
-				C1D84A0F264ACFB4006D8FF1 /* ContentView.swift in Sources */,
 				C1D84A2D264AD406006D8FF1 /* RoutesView.swift in Sources */,
 				C1D84A2B264AD1A8006D8FF1 /* FavoritesView.swift in Sources */,
 				C13ACA93264EBC2B0062075E /* FavoritesModel.swift in Sources */,
