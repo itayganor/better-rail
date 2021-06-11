@@ -2,6 +2,7 @@
   "common": {
     "cancel": "الغاء",
     "ok": "موافقة",
+    "delete": "حذف",
     "relax": "الرجاء, لا تنسى ان تتنفس"
   },
   "plan": {
@@ -11,13 +12,17 @@
     "selectStation": "اختيار المحطة",
     "departureTime": "وقت المغادرة",
     "arrivalTime": "قت الوصول",
+    "leaveAt": "وقت المغادرة",
+    "arriveAt": "قت الوصول",
     "now": "الان",
     "find": "حساب المسار",
     "switchStations": "تبديل المحطات",
     "switchStationsHint": "اختصار لتبديل محطة البداية بمحطة الوصول"
   },
   "selectStation": {
-    "placeholder": "البحث عن محطة"
+    "placeholder": "البحث عن محطة",
+    "instructions": "ابحث عن محطات القطار باستخدام شريط البحث",
+    "recentSearches": "عمليات البحث الأخيرة"
   },
   "routes": {
     "departure": "انطلاق",
@@ -58,6 +63,12 @@
     "privacyPolicy": "سياسة الخصوصية",
     "privacyPolicyLink": "https://better-rail.co.il/privacy-policy/",
     "sourceCode": "كود التطبيق"
+  },
+  "favorites": {
+    "title": "طرق مفضلة",
+    "empty": "لا مفضلات",
+    "emptyDescription": "",
+    "added": "أضيفت إلى المفضلة"
   },
   "modals": {
     "noTrainsFound": "لم يتم العثور على القطارات للتاريخ المطلوب",

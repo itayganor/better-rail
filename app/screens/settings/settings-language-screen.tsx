@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { observer } from "mobx-react-lite"
-import { Alert, View, ViewStyle } from "react-native"
+import { Alert, Platform, View, ViewStyle } from "react-native"
 import { Screen } from "../../components"
 import { SettingBox } from "./components/settings-box"
-import { color, spacing } from "../../theme"
+import { color, isDarkMode, spacing } from "../../theme"
 import { changeUserLanguage, translate, userLocale } from "../../i18n"
 import HapticFeedback from "react-native-haptic-feedback"
 
@@ -47,12 +47,17 @@ export const LanguageScreen = observer(function SettingsLanguageScreen() {
   }, [clickCounter])
 
   return (
-    <Screen style={ROOT} preset="scroll" unsafe={true}>
+    <Screen
+      style={ROOT}
+      preset="scroll"
+      unsafe={true}
+      statusBar={Platform.select({ ios: "light-content" })}
+      statusBarBackgroundColor={isDarkMode ? "#000" : "#fff"}
+    >
       <View style={SETTING_GROUP}>
         <SettingBox first title="עברית" onPress={() => changeLanguage("he")} checkmark={userLocale === "he"} />
         <SettingBox title="العربية" onPress={() => changeLanguage("ar")} checkmark={userLocale === "ar"} />
         <SettingBox last title="English" onPress={() => changeLanguage("en")} checkmark={userLocale === "en"} />
-        {/* <SettingBox last title="русский" /> */}
       </View>
     </Screen>
   )

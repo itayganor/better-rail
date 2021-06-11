@@ -6,12 +6,13 @@ import { observer } from "mobx-react-lite"
 import LinearGradient from "react-native-linear-gradient"
 import { color, spacing } from "../../theme"
 import { Text, StarIcon } from "../"
+import HapticFeedback from "react-native-haptic-feedback"
 import { stationsObject, stationLocale } from "../../data/stations"
-import { isRTL } from "../../i18n"
-import { FavoriteRoute, useStores } from "../../models"
+import { isRTL, translate } from "../../i18n"
+import { useStores } from "../../models"
+import { useToast } from "react-native-toast-hybrid"
 
 const arrowIcon = require("../../../assets/arrow-left.png")
-
 const colorScheme = Appearance.getColorScheme()
 
 // #region styles
@@ -83,12 +84,12 @@ export const RouteDetailsHeader = observer(function RouteDetailsHeader(props: Ro
   const { originId, destinationId, style } = props
   const { favoriteRoutes } = useStores()
   const navigation = useNavigation()
+  const toast = useToast()
 
   const originName = stationsObject[originId][stationLocale]
   const destinationName = stationsObject[destinationId][stationLocale]
 
   const routeId = `${originId}${destinationId}`
-  console.log(favoriteRoutes.routes)
 
   const isFavorite: boolean = useMemo(() => {
     return favoriteRoutes.routes.find((favorite) => favorite.id === routeId)
@@ -100,10 +101,13 @@ export const RouteDetailsHeader = observer(function RouteDetailsHeader(props: Ro
         <StarIcon
           filled={isFavorite}
           onPress={() => {
-            const favorite: FavoriteRoute = { id: routeId, originId, destinationId }
+            const favorite = { id: routeId, originId, destinationId }
             if (!isFavorite) {
+              toast.done(translate("favorites.added"))
+              HapticFeedback.trigger("impactMedium")
               favoriteRoutes.add(favorite)
             } else {
+              HapticFeedback.trigger("impactLight")
               favoriteRoutes.remove(favorite)
             }
           }}

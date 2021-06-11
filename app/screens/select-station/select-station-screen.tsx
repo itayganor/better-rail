@@ -1,14 +1,14 @@
 import React, { useMemo, useState } from "react"
 import { observer } from "mobx-react-lite"
-import { FlatList, View, TextStyle, ViewStyle, Pressable, Platform, I18nManager, Appearance } from "react-native"
-import { Screen, Text, StationCard } from "../../components"
+import { FlatList, View, TextStyle, ViewStyle, Pressable, Platform, I18nManager } from "react-native"
+import { Screen, Text, StationCard, FavoriteRoutes } from "../../components"
 import { useStores } from "../../models"
 import { SelectStationScreenProps } from "../../navigators/main-navigator"
-import { color, spacing } from "../../theme"
+import { color, spacing, isDarkMode } from "../../theme"
 import { useStations } from "../../data/stations"
 import { SearchInput } from "./search-input"
-
-const isDarkMode = Appearance.getColorScheme() === "dark"
+import { RecentSearchesBox } from "./recent-searches-box/recent-searches-box"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
 
 // #region styles
 const ROOT: ViewStyle = {
@@ -20,8 +20,11 @@ const SEARCH_BAR_WRAPPER: ViewStyle = {
   flexDirection: "row",
   alignItems: "center",
   paddingHorizontal: spacing[3],
+  paddingBottom: spacing[3],
   marginBottom: spacing[3],
-  marginTop: spacing[2],
+  backgroundColor: color.background,
+  borderBottomWidth: 0.75,
+  borderBottomColor: Platform.select({ ios: color.dimmer, android: isDarkMode ? "#3a3a3c" : "lightgrey" }),
 }
 
 const CANCEL_LINK: TextStyle = {
@@ -33,14 +36,12 @@ const CANCEL_LINK: TextStyle = {
   color: color.link,
 }
 
-const LIST_CONTENT_WRAPPER: ViewStyle = {
-  paddingHorizontal: spacing[3],
-}
 // #endregion
 
 export const SelectStationScreen = observer(function SelectStationScreen({ navigation, route }: SelectStationScreenProps) {
-  const { routePlan } = useStores()
+  const { routePlan, recentSearches, favoriteRoutes } = useStores()
   const stations = useStations()
+  const insets = useSafeAreaInsets()
   const [searchTerm, setSearchTerm] = useState("")
 
   const filteredStations = useMemo(() => {
@@ -56,7 +57,7 @@ export const SelectStationScreen = observer(function SelectStationScreen({ navig
     <StationCard
       name={station.name}
       image={station.image}
-      style={{ marginBottom: spacing[3] }}
+      style={{ marginHorizontal: spacing[3], marginBottom: spacing[3] }}
       onPress={() => {
         if (route.params.selectionType === "origin") {
           routePlan.setOrigin(station)
@@ -65,26 +66,34 @@ export const SelectStationScreen = observer(function SelectStationScreen({ navig
         } else {
           throw new Error("Selection type was not provided.")
         }
+        recentSearches.save({ id: station.id })
         navigation.navigate("planner")
       }}
     />
   )
 
   return (
-    <Screen style={ROOT} preset="fixed" unsafe={false} statusBarBackgroundColor={isDarkMode ? "#000" : "#fff"}>
-      <View style={SEARCH_BAR_WRAPPER}>
-        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    <Screen style={ROOT} preset="fixed" unsafe={true} statusBarBackgroundColor={isDarkMode ? "#1c1c1e" : "#f2f2f7"}>
+      <View
+        style={[SEARCH_BAR_WRAPPER, { paddingTop: insets.top > 20 ? insets.top : Platform.select({ ios: 27.5, android: 5 }) }]}
+      >
+        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} autoFocus={favoriteRoutes.routes.length < 2} />
         <Pressable onPress={() => navigation.navigate("planner")}>
           <Text style={CANCEL_LINK} tx="common.cancel" />
         </Pressable>
       </View>
 
       <FlatList
-        contentContainerStyle={LIST_CONTENT_WRAPPER}
         data={filteredStations}
         renderItem={({ item }) => renderItem(item)}
         keyExtractor={(item) => item.id}
         keyboardShouldPersistTaps="handled"
+        ListEmptyComponent={() => (
+          <View>
+            <RecentSearchesBox selectionType={route.params.selectionType} />
+            {recentSearches.entries.length > 1 && <FavoriteRoutes />}
+          </View>
+        )}
       />
     </Screen>
   )

@@ -1,24 +1,22 @@
 import React, { useMemo } from "react"
-import { Image, TouchableOpacity, ImageStyle, ViewStyle, ImageSourcePropType } from "react-native"
+import { Image, TouchableOpacity, ImageStyle, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
-import { color, spacing, typography } from "../../theme"
+import { color, spacing } from "../../theme"
 
 const starImage = require("../../../assets/star.png")
-const starFillImage = require("../../../assets/star-fill.png")
 
 const CONTAINER: ViewStyle = {
   justifyContent: "center",
 }
 
 const STAR_ICON: ImageStyle = {
-  width: 28,
-  height: 27,
+  width: 27,
+  height: 25,
   marginEnd: spacing[2],
-  marginBottom: spacing[2] - 1,
-  tintColor: "lightgrey",
-}
 
-const STAR_ICON_FILLED
+  tintColor: "lightgrey",
+  opacity: 0.9,
+}
 
 export interface StarIconProps {
   style?: ViewStyle
@@ -34,12 +32,10 @@ export const StarIcon = observer(function StarIcon(props: StarIconProps) {
   const { onPress, filled, style } = props
 
   const [STAR_ICON_SOURCE, STAR_STATE_STYLE] = useMemo(() => {
-    let STAR_ICON_SOURCE: ImageSourcePropType = starImage
     let STAR_STATE_STYLE: ImageStyle = { tintColor: "lightgrey" }
 
     if (filled) {
-      STAR_ICON_SOURCE = starFillImage
-      STAR_STATE_STYLE = { tintColor: color.yellow }
+      STAR_STATE_STYLE = { tintColor: color.yellow, opacity: 0.75 }
     }
 
     return [STAR_ICON_SOURCE, STAR_STATE_STYLE]
@@ -47,7 +43,7 @@ export const StarIcon = observer(function StarIcon(props: StarIconProps) {
 
   return (
     <TouchableOpacity onPress={onPress} style={[CONTAINER, style]}>
-      <Image source={STAR_ICON_SOURCE} style={[STAR_ICON, STAR_STATE_STYLE]} />
+      <Image source={starImage} style={[STAR_ICON, STAR_STATE_STYLE]} />
     </TouchableOpacity>
   )
 })

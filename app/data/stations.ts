@@ -149,9 +149,9 @@ const stations = [
   },
   {
     id: "7300",
-    hebrew: "באר שבע- צפון/אוניברסיטה",
-    english: "Be'er Sheva-North/University",
-    russian: "Беер-Шева Цафон",
+    hebrew: "באר שבע - צפון/אוניברסיטה",
+    english: "Be'er Sheva - North/University",
+    russian: "Беер - Шева Цафон",
     arabic: "بئر السبع - شمال/الجامعة",
     image: require("../../assets/station-images/beer-sheva-university.jpg"),
   },
@@ -325,6 +325,7 @@ const stations = [
     english: "Lod - Gane Aviv",
     russian: "Лод - Ганей Авив",
     arabic: "اللد - چاني أڤيڤ",
+    image: require("../../assets/station-images/lod-gane-aviv.jpg"),
   },
   {
     id: "8550",
@@ -381,6 +382,7 @@ const stations = [
     english: "Rishon LeTsiyon - Moshe Dayan",
     russian: "Ришон-Ле-Цион станция им. Моше Даяна",
     arabic: "ريشون لتسيون -موشي ديان",
+    image: require("../../assets/station-images/rishon-moshe-dayan.jpg"),
   },
   {
     id: "9000",
@@ -396,6 +398,7 @@ const stations = [
     english: "Sderot",
     russian: "Сдерот",
     arabic: "سديروت",
+    image: require("../../assets/station-images/sderot.jpg"),
   },
   {
     id: "9650",
@@ -403,6 +406,7 @@ const stations = [
     english: "Netivot",
     russian: "Нетивот",
     arabic: "نتيفوت",
+    image: require("../../assets/station-images/netivot.jpg"),
   },
   {
     id: "9700",
@@ -495,6 +499,7 @@ const stations = [
     russian: "Иерусалим - Ицхак Навон",
     arabic: "أورشليم – يتسحاق ناڤون",
     image: require("../../assets/station-images/jerusalem-itzhak-navon.jpg"),
+    blurhash: "9KGSDi?w",
   },
   {
     id: "6900",
@@ -506,10 +511,6 @@ const stations = [
   },
 ]
 
-let normalizeStationNames = []
-
-export default normalizeStationNames
-
 type StationsObjectType = {
   [key: string]: {
     id: string
@@ -518,6 +519,7 @@ type StationsObjectType = {
     russian: string
     arabic: string
     image?: undefined
+    blurhash?: string
   }
 }
 

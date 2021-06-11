@@ -17,6 +17,9 @@ import { color, spacing, typography } from "../../theme"
 
 const fontScale = PixelRatio.getFontScale()
 
+const searchIcon = require("../../../assets/search.png")
+const dismissIcon = require("../../../assets/dismiss.png")
+
 const SEARCH_BAR: ViewStyle = {
   flex: 1,
   flexDirection: "row",
@@ -25,7 +28,7 @@ const SEARCH_BAR: ViewStyle = {
   paddingVertical: Platform.select({ ios: spacing[3], android: undefined }),
   paddingEnd: spacing[2],
   borderRadius: 8,
-  backgroundColor: color.background,
+  backgroundColor: color.dimmer,
 }
 
 const SEARCH_INPUT_WRAPPER: ViewStyle = {
@@ -54,40 +57,44 @@ const DISMISS_ICON: ImageStyle = {
   opacity: 0.7,
 }
 
-export const SearchInput = ({ searchTerm, setSearchTerm }) => (
-  <View style={SEARCH_BAR}>
-    <View style={SEARCH_INPUT_WRAPPER}>
-      <Image style={SEARCH_ICON} source={require("../../../assets/search.png")} />
-      <TextInput
-        style={TEXT_INPUT}
-        placeholder={translate("selectStation.placeholder")}
-        placeholderTextColor={color.dim}
-        value={searchTerm}
-        onChangeText={(text) => {
-          LayoutAnimation.configureNext({
-            duration: 400,
-            create: {
-              type: LayoutAnimation.Types.spring,
-              property: LayoutAnimation.Properties.opacity,
-              springDamping: 1,
-            },
-            delete: {
-              type: LayoutAnimation.Types.spring,
-              property: LayoutAnimation.Properties.opacity,
-              springDamping: 1,
-            },
-          })
-          setSearchTerm(text)
-        }}
-        autoFocus={true}
-        autoCorrect={false}
-      />
-    </View>
+export const SearchInput = ({ searchTerm, setSearchTerm, autoFocus }) => {
+  const onChangeText = (text) => {
+    LayoutAnimation.configureNext({
+      duration: 400,
+      create: {
+        type: LayoutAnimation.Types.spring,
+        property: LayoutAnimation.Properties.opacity,
+        springDamping: 1,
+      },
+      delete: {
+        type: LayoutAnimation.Types.spring,
+        property: LayoutAnimation.Properties.opacity,
+        springDamping: 1,
+      },
+    })
+    setSearchTerm(text)
+  }
 
-    {searchTerm.length > 0 && (
-      <Pressable onPress={() => setSearchTerm("")}>
-        <Image style={DISMISS_ICON} source={require("../../../assets/dismiss.png")} />
-      </Pressable>
-    )}
-  </View>
-)
+  return (
+    <View style={SEARCH_BAR}>
+      <View style={SEARCH_INPUT_WRAPPER}>
+        <Image style={SEARCH_ICON} source={searchIcon} />
+        <TextInput
+          style={TEXT_INPUT}
+          placeholder={translate("selectStation.placeholder")}
+          placeholderTextColor={color.dim}
+          value={searchTerm}
+          onChangeText={onChangeText}
+          autoFocus={autoFocus}
+          autoCorrect={false}
+        />
+      </View>
+
+      {searchTerm.length > 0 && (
+        <Pressable onPress={() => setSearchTerm("")}>
+          <Image style={DISMISS_ICON} source={dismissIcon} />
+        </Pressable>
+      )}
+    </View>
+  )
+}

@@ -2,6 +2,7 @@
   "common": {
     "cancel": "Cancel",
     "ok": "OK",
+    "delete": "Delete",
     "relax": "Don't forget to take a breath, please."
   },
   "plan": {
@@ -11,11 +12,15 @@
     "destination": "To",
     "departureTime": "Departure Time",
     "arrivalTime": "Arrival Time",
+    "leaveAt": "Leave At",
+    "arriveAt": "Arrive At",
     "now": "Now",
     "find": "Find Routes"
   },
   "selectStation": {
-    "placeholder": "Search Stations"
+    "placeholder": "Search Stations",
+    "instructions": "Search for train stations using the search bar above.",
+    "recentSearches": "Recently Searched"
   },
   "routes": {
     "departure": "Departure",
@@ -49,13 +54,19 @@
     "languageChangeAlertMessage": "The app will restart to apply the changes",
 
     "hey": "Hey! 👋",
-    "whoami": "My name's Guy. I've created Better Rail to make Israel Railways services more accessible to the public.",
-    "independenceDeclaration": "",
+    "whoami": "My name's Guy. I created Better Rail to make Israel Railways services more accessible to the public.",
+    "independenceDeclaration": "The app is open sourced and is being developed independently.",
 
     "follow": "Follow Better Rail",
     "facebook": "Facebook",
     "twitter": "Twitter",
     "sourceCode": "Source Code"
+  },
+  "favorites": {
+    "title": "Favorite Routes",
+    "empty": "No Favorites",
+    "emptyDescription": "You can add a favorite from the routes screen",
+    "added": "Added to Favorites"
   },
   "modals": {
     "noTrainsFound": "No trains found for the requested date",
