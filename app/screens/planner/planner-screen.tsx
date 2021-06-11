@@ -28,7 +28,6 @@ const CONTENT_WRAPPER: ViewStyle = {
 const HEADER_WRAPPER: ViewStyle = {
   flexDirection: "row",
   justifyContent: "flex-end",
-  alignItems: "center",
 }
 
 let headerIconSize = 25
@@ -38,13 +37,6 @@ const SETTINGS_ICON: ImageStyle = {
   width: headerIconSize,
   height: headerIconSize,
   marginStart: spacing[3],
-  tintColor: color.primary,
-  opacity: 0.7,
-}
-
-const STAR_ICON: ImageStyle = {
-  width: headerIconSize,
-  height: headerIconSize - 1,
   tintColor: color.primary,
   opacity: 0.7,
 }
@@ -145,9 +137,6 @@ export const PlannerScreen = observer(function PlannerScreen({ navigation }: Pla
     <Screen style={ROOT} preset="scroll">
       <View style={CONTENT_WRAPPER}>
         <View style={HEADER_WRAPPER}>
-          <TouchableOpacity onPress={() => navigation.navigate("favoritesStack")} activeOpacity={0.8} accessibilityLabel="הגדרות">
-            <Image source={require("../../../assets/star.png")} style={STAR_ICON} />
-          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("settingsStack")} activeOpacity={0.8} accessibilityLabel="הגדרות">
             <Image source={require("../../../assets/settings.png")} style={SETTINGS_ICON} />
           </TouchableOpacity>
