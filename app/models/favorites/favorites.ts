@@ -1,18 +1,10 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { watchEvents, updateApplicationContext, getApplicationContext } from "react-native-watch-connectivity"
+import { watchEvents, updateApplicationContext } from "react-native-watch-connectivity"
 
-updateApplicationContext({ favorites: [{ originId: "3", destinationId: "2" }] })
+updateApplicationContext({ favorites: [{ originId: "3600", destinationId: "3500" }] })
 
 watchEvents.addListener("application-context", (context) => {
   console.log("Context updated:", context)
-})
-
-getApplicationContext()
-  .then((result) => console.log("Got context: ", result))
-  .catch((err) => console.error(err))
-
-const unsubscribe = watchEvents.addListener("application-context", (context) => {
-  console.log("context", context)
 })
 
 export const favoriteRouteSchema = {
@@ -32,6 +24,7 @@ export const FavoritesModel = types
   .actions((self) => ({
     add(route: FavoriteRoute) {
       self.routes.push({ ...route })
+      updateApplicationContext({})
     },
     remove(route: FavoriteRoute) {
       const filteredFavorites = self.routes.filter((favorite) => favorite.id !== route.id)

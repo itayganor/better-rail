@@ -1,7 +1,11 @@
 import Foundation
 import WatchConnectivity
 
-struct FavoriteRawData {
+struct AppContextData: Codable {
+  let favorites: [FavoriteRawData]
+}
+
+struct FavoriteRawData: Codable {
   let originId: String
   let destinationId: String
 }
@@ -13,13 +17,13 @@ struct Favorite {
 
 
 let fav = Favorite(origin: Station(id: "3500", name: "תל אביב השלום"), destination: Station(id: "3400", name: "באר שבע"))
-//let fav2 = Favorite(origin: "3500", destinationId: "2300")
 
 class FavoritesController: NSObject, WCSessionDelegate, ObservableObject {
-  var stations: [Favorite] = [fav]
+  var routes: [Favorite] = []
   var session: WCSession
   
   init(session: WCSession = .default){
+    print("Hello session!")
       self.session = session
       super.init()
       self.session.delegate = self
@@ -34,11 +38,36 @@ class FavoritesController: NSObject, WCSessionDelegate, ObservableObject {
   }
   
   func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
-    print("did receive application context", applicationContext["favorites"])
-    if let favoritesData: Array<FavoriteRawData> = applicationContext["favorites"] as? Array<FavoriteRawData> {
-      print(favoritesData)
-    } else {
-      print("W00T")
+    print("did receive application context", applicationContext)
+    
+    if (applicationContext["favorites"] != nil) {
+      if let favoritesDict = applicationContext["favorites"] as? NSArray {
+        for favorite in favoritesDict {
+          
+          if let route = favorite as FavoriteRawData {
+            var originInfo: Station?
+            var destinationInfo: Station?
+            
+            for station in stations {
+              
+              if station.id == route.originId {
+                originInfo = Station(id: station.id, name: station.hebrew)
+              }
+              
+              if station.id == route.destinationId {
+                destinationInfo = Station(id: station.id, name: station.hebrew)
+                }
+            }
+            
+            if originInfo != nil && destinationInfo != nil {
+              routes.append(Favorite(origin: originInfo!, destination: destinationInfo!))
+            }
+          }
+          
+        }
+      } else {
+        print("Whoops!")
+      }
     }
   }
 }

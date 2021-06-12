@@ -5,9 +5,9 @@ struct FavoritesView: View {
   
     var body: some View {
       VStack {
-        ForEach(0 ..< favorites.stations.count) { index in
+        ForEach(0 ..< favorites.routes.count) { index in
           NavigationLink(destination: RoutesView()) {
-            FavoriteItemView(origin: favorites.stations[index].origin, destination: favorites.stations[index].destination)
+            FavoriteItemView(origin: favorites.routes[index].origin, destination: favorites.routes[index].destination)
           }
         }
         
