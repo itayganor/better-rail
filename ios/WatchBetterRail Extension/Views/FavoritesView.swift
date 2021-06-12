@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FavoritesView: View {
-  @EnvironmentObject var favorites: Favorites
+  @ObservedObject var favorites: FavoritesController
   
     var body: some View {
       VStack {
@@ -19,7 +19,7 @@ struct FavoritesView: View {
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
       NavigationView {
-        FavoritesView().environmentObject(Favorites())
+        FavoritesView(favorites: FavoritesController())
       }
     }
 }

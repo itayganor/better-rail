@@ -7,13 +7,13 @@ struct FavoriteItemView: View {
     var body: some View {
       GeometryReader { metrics in
         HStack {
-          Text(origin.hebrew).multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
+          Text(origin.name).multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
           
           Spacer()          
           Image(systemName: "arrow.left")
           Spacer()
           
-          Text(destination.hebrew).multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
+          Text(destination.name).multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
         }.position(x: metrics.size.width / 2, y: metrics.size.height / 2.1)
       }.frame(height: 40, alignment: .center).font(.caption2)
     }
