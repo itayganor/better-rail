@@ -55,8 +55,10 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       notificationPayloadFile = "WatchBetterRail Extension/PushNotificationPayload.apns">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Better Rail">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1D849FD264ACFB3006D8FF1"
@@ -64,7 +66,7 @@
             BlueprintName = "WatchBetterRail"
             ReferencedContainer = "container:BetterRail.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -72,8 +74,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Better Rail">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1D849FD264ACFB3006D8FF1"
@@ -81,7 +85,16 @@
             BlueprintName = "WatchBetterRail"
             ReferencedContainer = "container:BetterRail.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C1D849FD264ACFB3006D8FF1"
+            BuildableName = "WatchBetterRail.app"
+            BlueprintName = "WatchBetterRail"
+            ReferencedContainer = "container:BetterRail.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
