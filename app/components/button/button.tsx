@@ -4,21 +4,28 @@ import { color, spacing, typography } from "../../theme"
 import { Text } from "../"
 
 const BUTTON_WRAPPER: ViewStyle = {
-  borderRadius: 12,
+  borderRadius: Platform.select({ ios: 12, android: 6 }),
   overflow: "hidden",
   elevation: 1,
+  flex: 1,
 }
 
 const PRESSABLE_BASE: ViewStyle = {
+  flex: 1,
   minHeight: 55,
   padding: spacing[4],
   backgroundColor: color.primary,
-  borderRadius: 12,
+  borderRadius: Platform.select({ ios: 12, android: 6 }),
   shadowOffset: { width: 0, height: 0 },
   shadowColor: color.dim,
   shadowRadius: 1,
   shadowOpacity: 0.1,
   opacity: 1,
+}
+
+const SMALL_BUTTON: ViewStyle = {
+  height: 40,
+  padding: spacing[2] + 1.5,
 }
 
 const TEXT: TextStyle = {
@@ -28,21 +35,28 @@ const TEXT: TextStyle = {
   textAlign: "center",
   color: color.whiteText,
 }
-export interface CustomButtonProps extends ButtonProps {
-  style?: ViewStyle
-  loading?: boolean
-  disabled?: boolean
+
+const SMALL_TEXT: TextStyle = {
+  fontSize: 14,
+  fontWeight: "normal",
 }
 
-/**
- * Describe your component here
- */
+export interface CustomButtonProps extends ButtonProps {
+  style?: ViewStyle
+  containerStyle?: ViewStyle
+  textStyle?: TextStyle
+  loading?: boolean
+  disabled?: boolean
+  size?: "small"
+}
+
 export const Button = function Button(props: CustomButtonProps) {
   const [isPressed, setIsPressed] = useState(false)
-  const { title, onPress, loading = false, disabled, style } = props
+  const { title, onPress, loading = false, disabled, textStyle, containerStyle, size, style } = props
 
   const PRESSABLE_STYLE = useMemo(() => {
-    let modifiedStyles = Object.assign({}, PRESSABLE_BASE)
+    let modifiedStyles = Object.assign({}, PRESSABLE_BASE, style)
+    if (size === "small") modifiedStyles = Object.assign({}, modifiedStyles, SMALL_BUTTON)
     if (Platform.OS === "ios") {
       if (isPressed) {
         modifiedStyles = Object.assign(modifiedStyles, { opacity: 0.8 })
@@ -52,9 +66,9 @@ export const Button = function Button(props: CustomButtonProps) {
   }, [isPressed, disabled])
 
   return (
-    <View style={BUTTON_WRAPPER}>
+    <View style={[BUTTON_WRAPPER, containerStyle]}>
       <Pressable
-        style={[PRESSABLE_STYLE, style, disabled && { backgroundColor: color.disabled }]}
+        style={[PRESSABLE_STYLE, disabled && { backgroundColor: color.disabled }]}
         onPressIn={() => setIsPressed(true)}
         onPressOut={() => setIsPressed(false)}
         android_ripple={{ color: color.primaryLighter }}
@@ -62,7 +76,11 @@ export const Button = function Button(props: CustomButtonProps) {
           disabled ? null : onPress()
         }}
       >
-        {loading ? <ActivityIndicator color={color.whiteText} /> : <Text style={TEXT}>{title}</Text>}
+        {loading ? (
+          <ActivityIndicator color={color.whiteText} />
+        ) : (
+          <Text style={[TEXT, textStyle, size === "small" && SMALL_TEXT]}>{title}</Text>
+        )}
       </Pressable>
     </View>
   )

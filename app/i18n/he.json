@@ -2,6 +2,7 @@
   "common": {
     "cancel": "ביטול",
     "ok": "אישור",
+    "set": "שמירה",
     "delete": "מחיקה",
     "relax": "אנא, אל תשכחו לנשום"
   },
@@ -10,8 +11,6 @@
     "origin": "תחנת מוצא",
     "destination": "תחנת יעד",
     "selectStation": "בחירת תחנה",
-    "departureTime": "זמן יציאה",
-    "arrivalTime": "זמן הגעה",
     "leaveAt": "שעת יציאה",
     "arriveAt": "שעת הגעה",
     "now": "עכשיו",
