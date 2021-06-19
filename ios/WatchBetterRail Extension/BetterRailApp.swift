@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct BetterRailApp: App {
-    let favorites = FavoritesController()
+    let favorites = FavoritesViewModel()
   
     @SceneBuilder var body: some Scene {
         WindowGroup {

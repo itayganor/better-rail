@@ -1,11 +1,11 @@
 import Foundation
 
-struct StationData: Hashable, Codable, Identifiable {
+struct Station: Hashable, Codable, Identifiable {
   var id: String
-  var hebrew: String
+  var name: String
 }
 
-var stations: [StationData] = load("stationsData.json")
+var stations: [Station] = load("stationsData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

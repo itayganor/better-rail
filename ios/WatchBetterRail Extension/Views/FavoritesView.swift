@@ -1,13 +1,15 @@
 import SwiftUI
 
 struct FavoritesView: View {
-  @ObservedObject var favorites: FavoritesController
+  @ObservedObject var favorites: FavoritesViewModel
   
     var body: some View {
       VStack {
         ForEach(0 ..< favorites.routes.count) { index in
-          NavigationLink(destination: RoutesView()) {
-            FavoriteItemView(origin: favorites.routes[index].origin, destination: favorites.routes[index].destination)
+          let origin = favorites.routes[index].origin
+          let destination = favorites.routes[index].destination
+          NavigationLink(destination: RoutesView(route: RouteViewModel(origin: origin, destination: destination))) {
+            FavoriteItemView(origin: origin, destination: destination)
           }
         }
         
@@ -19,7 +21,7 @@ struct FavoritesView: View {
 struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
       NavigationView {
-        FavoritesView(favorites: FavoritesController())
+        FavoritesView(favorites: FavoritesViewModel())
       }
     }
 }
