@@ -32,5 +32,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Heebo-Medium.otf</string>
+		<string>Heebo-Regular.otf</string>
+	</array>
 </dict>
 </plist>

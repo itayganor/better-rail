@@ -29,6 +29,14 @@
 		C13771B8267E6F7A00DEDBAB /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13771B7267E6F7A00DEDBAB /* RouteViewModel.swift */; };
 		C13ACA93264EBC2B0062075E /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13ACA92264EBC2B0062075E /* FavoritesViewModel.swift */; };
 		C14F313426331361002A01D7 /* Swifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F313326331361002A01D7 /* Swifty.swift */; };
+		C18530702685E25400F00F91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		C185307226863A3F00F00F91 /* Heebo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62AD955938654791888FAB90 /* Heebo-Black.otf */; };
+		C185307926863A4500F00F91 /* Heebo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A047FB8FBCA54556AEDB349D /* Heebo-Light.otf */; };
+		C185307A26863A4500F00F91 /* Heebo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70BF4419AFA46D2B69352A3 /* Heebo-Thin.otf */; };
+		C185307B26863A4500F00F91 /* Heebo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B118A8459B542A2BA8C9824 /* Heebo-Regular.otf */; };
+		C185307C26863A4500F00F91 /* Heebo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E3C07A94FCDB4698B4A058EB /* Heebo-Bold.otf */; };
+		C185307D26863A4500F00F91 /* Heebo-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF4431C692CA4F7D8DC013BE /* Heebo-ExtraBold.otf */; };
+		C185307E26863A4500F00F91 /* Heebo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2759849ACE84A51AA1EC58E /* Heebo-Medium.otf */; };
 		C19187D9264C1759000B9C57 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19187D8264C1759000B9C57 /* StationModel.swift */; };
 		C1D84A01264ACFB4006D8FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D84A00264ACFB4006D8FF1 /* Assets.xcassets */; };
 		C1D84A08264ACFB4006D8FF1 /* WatchBetterRail Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C1D84A07264ACFB4006D8FF1 /* WatchBetterRail Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -152,7 +160,7 @@
 		C1D84A19264ACFB4006D8FF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C1D84A1B264ACFB4006D8FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1D84A1C264ACFB4006D8FF1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		C1D84A2A264AD1A8006D8FF1 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		C1D84A2A264AD1A8006D8FF1 /* FavoritesView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		C1D84A2C264AD406006D8FF1 /* RoutesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesView.swift; sourceTree = "<group>"; };
 		C1D84A2F264C00D0006D8FF1 /* stationsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stationsData.json; sourceTree = "<group>"; };
 		C1D84A36264C125C006D8FF1 /* FavoriteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemView.swift; sourceTree = "<group>"; };
@@ -637,7 +645,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D84A30264C00D0006D8FF1 /* stationsData.json in Resources */,
+				C185307D26863A4500F00F91 /* Heebo-ExtraBold.otf in Resources */,
+				C185307226863A3F00F00F91 /* Heebo-Black.otf in Resources */,
+				C185307C26863A4500F00F91 /* Heebo-Bold.otf in Resources */,
+				C185307B26863A4500F00F91 /* Heebo-Regular.otf in Resources */,
+				C185307E26863A4500F00F91 /* Heebo-Medium.otf in Resources */,
+				C18530702685E25400F00F91 /* Images.xcassets in Resources */,
+				C185307A26863A4500F00F91 /* Heebo-Thin.otf in Resources */,
 				C1D84A1A264ACFB4006D8FF1 /* Preview Assets.xcassets in Resources */,
+				C185307926863A4500F00F91 /* Heebo-Light.otf in Resources */,
 				C1D84A17264ACFB4006D8FF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1296,6 +1312,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = UE6BVYPPFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1335,6 +1352,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UE6BVYPPFX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

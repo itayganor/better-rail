@@ -10,10 +10,10 @@ struct FavoriteRawData: Codable {
   let destinationId: String
 }
 
-let fav = Favorite(origin: Station(id: "3500", name: "תל אביב השלום"), destination: Station(id: "3400", name: "באר שבע"))
+let fav = Favorite(origin: Station(id: "3500", name: "ת״א - השלום"), destination: Station(id: "3400", name: "באר שבע"))
 
 class FavoritesViewModel: NSObject, ObservableObject {
-  var routes: [Favorite] = [fav]
+  var routes: [Favorite] = [fav, fav, fav, fav]
   
   
 //  var session: WCSession

@@ -5,15 +5,14 @@ struct FavoritesView: View {
   
     var body: some View {
       VStack {
-        ForEach(0 ..< favorites.routes.count) { index in
+        List(0 ..< favorites.routes.count) { index in
           let origin = favorites.routes[index].origin
           let destination = favorites.routes[index].destination
           NavigationLink(destination: RoutesView(route: RouteViewModel(origin: origin, destination: destination))) {
             FavoriteItemView(origin: origin, destination: destination)
           }
         }
-        
-        Spacer()
+        .listStyle(CarouselListStyle())
       }.navigationTitle("מועדפים")
     }
 }
