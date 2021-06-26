@@ -7,9 +7,7 @@ struct FavoriteItemView: View {
     var body: some View {
       GeometryReader { metrics in
         ZStack(alignment: .leading) {
-          Rectangle()
-              .foregroundColor(.clear)
-            .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+          Rectangle().foregroundColor(Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5))
           
                       
             VStack(alignment: .leading) {
@@ -20,7 +18,7 @@ struct FavoriteItemView: View {
                 Image(systemName: "arrow.left.circle.fill").font(.system(size: 12))
                 Text(destination.name).font(Font.custom("Heebo", size: 12))
               }
-            }.padding(.bottom, 8).padding(.leading, 10)
+            }.padding(.bottom, 6).padding(.leading, 8).shadow(radius: 5)
           
           
 //
@@ -30,8 +28,8 @@ struct FavoriteItemView: View {
 //
 //          Text(destination.name).multilineTextAlignment(.center).frame(width: metrics.size.width * 0.4, alignment: .center)
         }
-      }
-      .frame(idealHeight: 120).background(Image("tlv-hashalom").resizable())
+      }.background(Image("tlv-hashalom").resizable())
+      .frame(idealHeight: 80)
     }
 }
 
