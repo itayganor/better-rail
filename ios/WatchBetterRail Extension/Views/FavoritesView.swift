@@ -5,11 +5,16 @@ struct FavoritesView: View {
   
     var body: some View {
       VStack {
-        List(0 ..< favorites.routes.count) { index in
-          let origin = favorites.routes[index].origin
-          let destination = favorites.routes[index].destination
-          NavigationLink(destination: RoutesView(route: RouteViewModel(origin: origin, destination: destination))) {
-            FavoriteItemView(origin: origin, destination: destination)
+        List {
+          ForEach (0 ..< favorites.routes.count) { index in
+            let origin = favorites.routes[index].origin
+            let destination = favorites.routes[index].destination
+            NavigationLink(destination: RoutesView(route: RouteViewModel(origin: origin, destination: destination))) {
+              FavoriteItemView(origin: origin, destination: destination)
+            }.listRowBackground(ZStack {
+              Image("tlv-hashalom").resizable()
+              Rectangle().foregroundColor(Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5))
+            }.cornerRadius(5))
           }
         }
         .listStyle(CarouselListStyle())
