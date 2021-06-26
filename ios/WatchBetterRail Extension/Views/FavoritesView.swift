@@ -13,7 +13,7 @@ struct FavoritesView: View {
               FavoriteItemView(origin: origin, destination: destination)
             }.listRowBackground(ZStack {
               Image("tlv-hashalom").resizable()
-              Rectangle().foregroundColor(Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5))
+              Rectangle().foregroundColor(Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.45))
             }.cornerRadius(5))
           }
         }

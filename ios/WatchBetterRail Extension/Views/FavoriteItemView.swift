@@ -10,13 +10,13 @@ struct FavoriteItemView: View {
           
             VStack(alignment: .leading) {
               Spacer()
-              Text(origin.name).font(Font.custom("Heebo", size: 16)).fontWeight(.black).padding(.bottom, -6)
+              Text(origin.name).font(Font.custom("Heebo", size: 16)).fontWeight(.medium).padding(.bottom, -6)
               
               HStack(alignment: .center) {
                 Image(systemName: "arrow.left.circle.fill").font(.system(size: 12))
                 Text(destination.name).font(Font.custom("Heebo", size: 12))
               }
-            }.padding(.bottom, 6).shadow(radius: 5)
+            }.padding(.bottom, 6).shadow(radius: 10)
           }
       .frame(idealHeight: 90)
       }
